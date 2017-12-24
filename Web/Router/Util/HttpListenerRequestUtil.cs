@@ -13,11 +13,11 @@ namespace Web.Router.Util
             {
                 case "GET":
                     return HTTPMethod.Get;
-                case "Post":
+                case "POST":
                     return HTTPMethod.Post;
-                case "Put":
+                case "PUT":
                     return HTTPMethod.Put;
-                case "Delete":
+                case "DELETE":
                     return HTTPMethod.Delete;
                 default:
                     throw new NotSupportedException();

@@ -15,9 +15,7 @@ namespace Web
     {
         public WebService(IRouter router, string[] prefixes, params object[] controllers)
         {
-            Router = router;
-            if (Router == null)
-                Router = new DefaultRouter();
+            Router = router ?? new DefaultRouter();
             Controllers = controllers;
             foreach (var controller in controllers)
                 Router.RegisterController(controller);
@@ -48,6 +46,8 @@ namespace Web
             while(mIsRunning)
             {
                 HttpListenerContext context = await HttpListener.GetContextAsync();
+                if (context.Request.Url.AbsolutePath == "/favicon.ico")
+                    continue;
                 var result = Router.Route(context.Request);
 
                 using (var response = context.Response)
