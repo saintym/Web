@@ -48,6 +48,8 @@ namespace Web
             while(mIsRunning)
             {
                 HttpListenerContext context = await HttpListener.GetContextAsync();
+                if (context.Request.Url.AbsolutePath == "/favicon.ico")
+                    continue;
                 var result = Router.Route(context.Request);
 
                 using (var response = context.Response)

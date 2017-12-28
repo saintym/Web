@@ -102,19 +102,18 @@ namespace Web.Router
             var url = uri.AbsolutePath;
             HTTPMethod method = request.GetHTTPMethod();
 
-            foreach(string requestURL in RouteMap.Keys)
+            foreach (string requestURL in RouteMap.Keys)
             {
 
-                if(Regex.IsMatch(url, requestURL))
+                if (Regex.IsMatch(url, requestURL))
                 {
                     var routes = RouteMap[requestURL];
                     if (routes.ContainsKey(method))
                         return RouteMap[requestURL][method].RouterCallback(request);
                 }
             }
-            
+
             throw new NotImplementedException();
-            
         }
     }
 }
