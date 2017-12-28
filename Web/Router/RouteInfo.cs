@@ -5,15 +5,13 @@ namespace Web.Router
 {
     public class RouteInfo
     {
-        public RouteInfo(HTTPMethod method, Regex regex, DefaultRouter.RouterCallback routerCallback)
+        public RouteInfo(HTTPMethod method,DefaultRouter.RouterCallback routerCallback)
         {
             Method = method;
-            Regex = regex;
             RouterCallback = routerCallback;
         }
 
         public HTTPMethod Method { get; }
-        public Regex Regex { get; }
         public DefaultRouter.RouterCallback RouterCallback { get; }
     }
 }

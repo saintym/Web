@@ -11,11 +11,11 @@ namespace Web.Router.Attribute
         public RouteAttribute(HTTPMethod httpMethod, string routeUrl)
         {
             HTTPMethod = httpMethod;
-            RouteUrl = routeUrl;
+            RouteURL = routeUrl;
         }
         
         public HTTPMethod HTTPMethod { get; }
-        public string RouteUrl { get; }
+        public string RouteURL { get; }
     }
 
     public class GetAttribute : RouteAttribute
