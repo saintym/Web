@@ -7,7 +7,6 @@ using Web.Router.Util;
 using Web.Router.Attribute;
 
 using System.Linq;
-
 using RouteMap = System.Collections.Generic.Dictionary<Web.Router.HTTPMethod, Web.Router.RouteInfo>;
 using System.Text;
 
@@ -61,8 +60,6 @@ namespace Web.Router
                 {
                     RouteMap.Add(regexValue.RegexedPath, mapValue);
                 }
-
-
                 RouterCallback routerCallback = (HttpListenerRequest request) =>
                 {
                     /**
@@ -87,7 +84,6 @@ namespace Web.Router
                     queryResult.ToString();
                     #endregion
                     */
-
                     string[] routeParams = new string[regexValue.Keys.Length];
                     string methodResult;
 
